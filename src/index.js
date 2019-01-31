@@ -44,9 +44,9 @@ export default class App extends Component {
   renderPessoas = pessoas => (
     <View>
       {pessoas.map((pessoa, index) => (
-        <View key={index}>
-          <Text>{pessoa.nome}</Text>
-          <Text>{pessoa.idade}</Text>
+        <View style={styles.top} key={index}>
+          <Text>Nome: {pessoa.nome}</Text>
+          <Text>Idade: {pessoa.idade}</Text>
         </View>
       ))}
       <Text />
