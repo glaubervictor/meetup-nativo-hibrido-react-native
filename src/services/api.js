@@ -1,11 +1,16 @@
 import { create } from "apisauce";
 
 const api = create({
-  baseURL: "http://localhost:5000/api"
+  baseURL: "http://35.188.128.118:8080/api"
 });
 
-// api.addResponseTransform(response => {
-//   if (!response.ok) throw response;
+// api.addRequestTransform(request => {
+//   const token = "";
+//   request.headers["Authorization"] = `Bearer ${token}`;
 // });
+
+api.addResponseTransform(response => {
+  if (!response.ok) throw response;
+});
 
 export default api;
